@@ -4,7 +4,7 @@ const cors = require('cors'); // Require cors
 const rollRoutes = require('./src/routes/rollRoutes.js');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
 // Enable CORS for all routes
 app.use(cors());

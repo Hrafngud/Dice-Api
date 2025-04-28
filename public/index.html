@@ -5,34 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dice Game API</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="app">
-    <h1>Welcome to the Dice Game API 🎲</h1>
-    <form id="diceForm">
-      <label for="dice">Dice:</label>
-      <select id="dice" required>
-        <option value="" disabled selected>Select a dice type</option>
-        <option value="d4">d4</option>
-        <option value="d6">d6</option>
-        <option value="d8">d8</option>
-        <option value="d10">d10</option>
-        <option value="d12">d12</option>
-        <option value="d20">d20</option>
-        <option value="d100">d100</option>
-      </select>
-      
-      <label for="times">Times:</label>
-      <input type="number" id="times" placeholder="Number of rolls" value="1" min="1" max="100" />
-            
-      <label for="bet">Bet:</label>
-      <input type="number" id="bet" placeholder="Enter a number to bet on (optional)" disabled hidden />
-      
-      <button type="submit">Roll</button>
-    </form>
-    <div id="result"></div>
+    <h1>Dice Game API 🎲</h1>
+    <div class="card">
+      <form id="diceForm">
+        <div class="form-group">
+          <label for="dice">Select Dice</label>
+          <select id="dice" required>
+            <option value="" disabled selected>Choose a dice</option>
+            <option value="d4">d4</option>
+            <option value="d6">d6</option>
+            <option value="d8">d8</option>
+            <option value="d10">d10</option>
+            <option value="d12">d12</option>
+            <option value="d20">d20</option>
+            <option value="d100">d100</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bet">Bet (Optional)</label>
+          <input type="number" id="bet" placeholder="Enter a number" disabled hidden />
+        </div>
+        <button type="submit">Roll Dice</button>
+      </form>
+    </div>
+    <div class="card result-card">
+      <h2>Result</h2>
+      <p><strong>Dice:</strong> <span id="result-dice">-</span></p>
+      <p><strong>Roll:</strong> <span id="result-roll">-</span></p>
+      <p><strong>Bet:</strong> <span id="result-bet">-</span></p>
+      <p><strong>Outcome:</strong> <span id="result-outcome">-</span></p>
+    </div>
+    <div id="error-message" class="error-message hidden"></div>
   </div>
   <script src="/js/app.js"></script>
 </body>
 </html>
-
